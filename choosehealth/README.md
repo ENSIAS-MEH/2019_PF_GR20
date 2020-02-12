@@ -1,13 +1,13 @@
-# EasyCal
-__EasyCal__ is a modern calorie counting app that makes nutrition tracking easy: _<http://easycal.io>_
+# ChooseHealth
+__ChooseHealth__ is a modern calorie counting app that makes nutrition tracking easy
 
-![EasyCal Home Page](/README/todays-log.png "EasyCal Home Page")
+
 
 If you'd like to start counting your calories and tracking your exercise, you can register an account with just an email address and password!  To take it for a test run, try these login credentials:
 
-__Email Address:__ easycal@test.com
+__Email Address:__ choosehealth@test.com
 
-__Password__: easycal
+__Password__: test
 
 ---
 
@@ -24,7 +24,7 @@ __Password__: easycal
 ---
 
 ## Technology
-The frontend of EasyCal is built using React with React Router.  I'm most familiar with Java as a backend language, so all REST endpoints use Play! 1.4.4, a Java-powered MVC web framework.  For details on the data models and implementations, visit the backend repo [here](https://github.com/mileshenrichs/easycal-backend).  All food and nutrition data comes from the [USDA Food Composition Databases](https://ndb.nal.usda.gov/ndb/doc/index).
+The frontend of EasyCal is built using React with React Router.  I'm most familiar with Java as a backend language, so all REST endpoints use Play! 1.4.4, a Java-powered MVC web framework. All food and nutrition data comes from the [USDA Food Composition Databases](https://ndb.nal.usda.gov/ndb/doc/index).
 
 ## Libraries Used
 * __[immutability-helper](https://www.npmjs.com/package/immutability-helper):__ Immutability helper's `update()` function made nested state objects easy to update without mutation
@@ -83,6 +83,3 @@ Contains components:
 * __Header__: site header, contains logo and navigation
 * __Footer__: standard footer, contains logo and nav links
 * __AuthLoader__: full-screen loading spinner to hide __DayView__ when app is initally loaded and waiting for authentication results from [backend](https://github.com/mileshenrichs/easycal-backend)
-
-## Deployment
-Deployment was a little tricky on both the front- and back-end.  Since `npm run build` creates a static directory, I was able to upload these files to the Namecheap hosting account I purchased with my domain via cPanel's interface.  I had to switch from using `BrowserRouter` to `HashRouter` to prevent my frontend server from looking for directories for each of my routes (i.e. `/stats`, `/add`, etc).
