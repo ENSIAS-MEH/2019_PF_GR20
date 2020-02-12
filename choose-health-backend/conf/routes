@@ -1,0 +1,38 @@
+# API endpoints
+GET     /api/test                                       EasyCal.testEndpoint
+
+GET     /api/consumptions                               EasyCal.getConsumptions
+POST    /api/consumptions/{consumptionId}/delete        EasyCal.deleteConsumption
+POST    /api/consumptions/food-meal-group               EasyCal.createMealGroupConsumptions
+POST    /api/consumptions/{consumptionId}               EasyCal.updateConsumption
+POST    /api/consumptions                               EasyCal.createNewConsumption
+
+GET     /api/foods                                      EasyCal.searchFoods
+GET     /api/foods/{ndbno}                              EasyCal.getFoodDetails
+GET     /api/foods/user/{userId}                        EasyCal.getUserCreatedFoods
+POST    /api/foods                                      EasyCal.createFood
+POST    /api/foods/{id}                                 EasyCal.deleteUserCreatedFood
+
+GET     /api/food-meal-groups/{foodMealGroupId}         EasyCal.getFoodMealGroup
+POST    /api/food-meal-groups                           EasyCal.createNewFoodMealGroup
+POST    /api/food-meal-groups/update                    EasyCal.updateFoodMealGroup
+POST    /api/food-meal-groups/{foodMealGroupId}         EasyCal.updateFoodMealGroupName
+GET     /api/food-meal-groups/user/{userId}             EasyCal.getUserFoodMealGroups
+POST    /api/food-meal-groups/{foodMealGroupId}/add     EasyCal.addFoodToMealGroup
+POST    /api/food-meal-groups/{foodMealGroupId}/delete  EasyCal.deleteFoodMealGroup
+
+GET     /api/exercise                                   EasyCal.getExercise
+POST    /api/exercise                                   EasyCal.addOrUpdateExercise
+
+POST    /api/goals                                      EasyCal.setGoals
+GET     /api/goals/{userId}                             EasyCal.getUserGoals
+
+GET     /api/stats                                      EasyCal.getCumulativeStatistics
+
+# User creation & auth
+POST    /api/users/register                             Auth.registerUser
+POST    /api/users/login                                Auth.logInUser
+POST    /api/auth/check                                 Auth.checkAuth
+
+# Catch all
+*       /{controller}/{action}                          {controller}.{action}
